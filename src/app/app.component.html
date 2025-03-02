@@ -1,0 +1,21 @@
+<div class="container">
+    <app-header />
+
+    <div class="p-5 mt-3 text-center bg-body-tertiary rounded-3">
+        <h1 class="text-body-emphasis">Agenda de Contatos</h1>
+        <p class="col-lg-8 mx-auto fs-5 text-muted">
+          Explore a agenda de contatos e tenha acesso aos dados das pessoas.
+        </p>
+        <div class="d-inline-flex gap-2">
+          <a
+            class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" routerLink="/adicionar-pessoa"
+          >
+            <i class="fa fa-plus-circle me-2" aria-hidden="true"></i> Adicionar
+            Pessoa
+        </a>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+    <app-footer/>
+</div>
+

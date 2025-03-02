@@ -1,0 +1,17 @@
+<div class="card">
+  <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/26434417-padrao-avatar-perfil-icone-do-social-meios-de-comunicacao-do-utilizador-foto-vetor.jpg" class="card-img-top" alt="Foto de {{ pessoa.nome }}">
+  <div class="card-body">
+    <h5 class="card-title">{{pessoa.nome}}</h5>
+    <div class="d-flex gap-2"> 
+      <a href="#" class="btn btn-primary" routerLink="/editar-pessoa/{{pessoa.id}}">Editar Pessoa</a>
+      <button class="btn btn-danger" (click)="excluirPessoa(pessoa.id)">Excluir Pessoa</button>
+    </div>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>Nome:</strong> {{ pessoa.nome }}</li>
+    <li class="list-group-item"><strong>CEP:</strong> {{ pessoa.cep }}</li>
+    <li class="list-group-item"><strong>Endereço:</strong> {{ pessoa.endereco }}</li>
+    <li class="list-group-item"><strong>Cidade:</strong> {{ pessoa.cidade }}</li>
+    <li class="list-group-item"><strong>UF:</strong> {{ pessoa.uf }}</li>
+  </ul>
+</div>

@@ -1,0 +1,30 @@
+<h1>{{ id ? 'Editar Pessoa: ' : 'Adicionar Pessoa:' }}</h1>
+
+<form [formGroup]="formGroupPessoa" (submit)="salvarPessoa()">
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome</label>
+    <input formControlName="nome" type="text" class="form-control" id="nome">
+  </div>
+  <div class="mb-3">
+    <label for="cep" class="form-label">CEP</label>
+    <input formControlName="cep" type="text" class="form-control" id="cep" maxlength="8">
+    <small *ngIf="formGroupPessoa.get('cep')?.value?.length < 8" class="text-muted">
+      Digite um CEP válido (8 números).
+    </small>
+  </div>
+  <div class="mb-3">
+    <label for="endereco" class="form-label">Endereço</label>
+    <input formControlName="endereco" type="text" class="form-control" id="endereco" readonly>
+  </div>
+  <div class="mb-3">
+    <label for="cidade" class="form-label">Cidade</label>
+    <input formControlName="cidade" type="text" class="form-control" id="cidade" readonly>
+  </div>
+  <div class="mb-3">
+    <label for="uf" class="form-label">UF</label>
+    <input formControlName="uf" type="text" class="form-control" id="uf" readonly>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!formGroupPessoa.valid">
+    {{ id ? 'Atualizar' : 'Adicionar' }}
+  </button>
+</form>
